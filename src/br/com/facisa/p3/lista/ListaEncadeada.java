@@ -1,11 +1,13 @@
 package br.com.facisa.p3.lista;
 
+import br.com.facisa.p3.Item;
+
 public class ListaEncadeada {
 
     private Item primeiroItem;
     private int contador;
 
-    public void adicionar(Item item) {
+    public void add(Item item) {
 
 	if (primeiroItem == null) {
 	    this.primeiroItem = item;
@@ -14,30 +16,30 @@ public class ListaEncadeada {
 
 	    Item aux = primeiroItem;
 
-	    while (aux.getProximoItem() != null) {
-		aux = aux.getProximoItem();
+	    while (aux.getProximo() != null) {
+		aux = aux.getProximo();
 	    }
 
-	    aux.setProximoItem(item);
+	    aux.setProximo(item);
 	    contador++;
 	}
 
     }
 
-    public void remover(Item item) {
+    public void remove(Item item) {
 
 	if (item != null) {
 	    if (item.equals(primeiroItem)) {
-		primeiroItem = primeiroItem.getProximoItem();
+		primeiroItem = primeiroItem.getProximo();
 		contador--;
 	    } else {
 		Item temp = primeiroItem;
 
-		while (temp != null && temp.getProximoItem() != null && !temp.getProximoItem().equals(item)) {
-		    temp = temp.getProximoItem();
+		while (temp != null && temp.getProximo() != null && !temp.getProximo().equals(item)) {
+		    temp = temp.getProximo();
 		}
 
-		temp.setProximoItem(temp.getProximoItem());
+		temp.setProximo(temp.getProximo());
 		contador--;
 	    }
 	}
@@ -48,16 +50,51 @@ public class ListaEncadeada {
 	return contador;
     }
 
-    public void remover(int pos) {
+    public void remove(int pos) {
 
-	for (int i = 0; i < pos; i++) {
+	if (pos == 0) {
+	    primeiroItem = primeiroItem.getProximo();
+	} else {
 
+	    Item temp = primeiroItem;
+
+	    for (int i = 0; i < pos; i++) {
+		temp = temp.getProximo();
+	    }
+
+	    temp.setProximo(temp.getProximo().getProximo());
+	    contador--;
 	}
 
     }
 
-    public Item obter() {
-	return null;
+    public Item get(int pos) {
+
+	Item temp = primeiroItem;
+
+	for (int i = 0; i < pos; i++) {
+	    temp = temp.getProximo();
+	}
+
+	return temp;
+    }
+
+    public void clear() {
+	this.primeiroItem = null;
+	this.contador = 0;
+    }
+
+    public boolean contains(Item item) {
+
+	boolean achou = false;
+	Item temp = primeiroItem;
+
+	while (temp != null && temp.equals(item)) {
+	    temp = temp.getProximo();
+	}
+
+	return achou;
+
     }
 
 }

@@ -1,3 +1,4 @@
+
 package br.com.facisa.p3.lista;
 
 import br.com.facisa.p3.Item;
@@ -19,7 +20,6 @@ public class ListaEncadeada {
 	    while (aux.getProximo() != null) {
 		aux = aux.getProximo();
 	    }
-
 	    aux.setProximo(item);
 	    contador++;
 	}
@@ -58,7 +58,7 @@ public class ListaEncadeada {
 
 	    Item temp = primeiroItem;
 
-	    for (int i = 0; i < pos; i++) {
+	    for (int i = 0; i < pos - 1; i++) {
 		temp = temp.getProximo();
 	    }
 

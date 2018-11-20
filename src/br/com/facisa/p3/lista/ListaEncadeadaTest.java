@@ -88,20 +88,21 @@ class ListaEncadeadaTest {
     @Test
     public void testeRemoverUltimaPosicao() {
 
-	Item item = new Item(11);
-	Item item2 = new Item(10);
-	Item item3 = new Item(9);
-	Item item4 = new Item(12);
+	Item item = new Item(9); // 0
+	Item item2 = new Item(10); // 1
+	Item item3 = new Item(11); // 2
+	Item item4 = new Item(12); // 3 vai ser deletado.
 
 	lista.add(item);
 	lista.add(item2);
 	lista.add(item3);
 	lista.add(item4);
 
-	lista.remove(4);
+	lista.remove(3);
 
 	Assert.assertEquals(false, lista.contains(item4));
 	Assert.assertEquals(3, lista.tamanho());
+	Assert.assertEquals(null, lista.get(3));
 
     }
 

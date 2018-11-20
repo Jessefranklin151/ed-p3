@@ -114,7 +114,23 @@ public class DeckEncadeado {
 	}
 
 	public boolean isEmpty() {
+
 		return contador == 0;
 	}
 
+	public Item peekFirst() {
+		return primeiroItem;
+	}
+	
+	public Item peekLast() {
+		
+		Item temp = primeiroItem;
+		
+		while (temp != null && temp.getProximo() != null) {
+			temp = temp.getProximo();
+		}
+		
+		return temp;
+		
+	}
 }

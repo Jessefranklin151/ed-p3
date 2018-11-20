@@ -174,6 +174,7 @@ class DeckEncadeadoTest {
 	deck.removeByValue(item1);
 
 	Assert.assertEquals(false, deck.contains(item1));
+	Assert.assertEquals(2, deck.size());
 
     }
 

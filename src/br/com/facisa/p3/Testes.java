@@ -11,7 +11,6 @@ public class Testes {
 	LinkedList<Item> itens = new LinkedList<Item>();
 //	ListaEncadeada itens = new ListaEncadeada();
 	
-
 	Item item1 = new Item(1);
 	Item item2 = new Item(2);
 	Item item3 = new Item(3);

@@ -23,12 +23,11 @@ class ListaEncadeadaTest {
 
     @BeforeEach
     void setUp() throws Exception {
-
-	lista.clear();
     }
 
     @AfterEach
     void tearDown() throws Exception {
+    	lista.clear();
     }
 
     @Test
@@ -45,10 +44,10 @@ class ListaEncadeadaTest {
     @Test
     public void testeRemoverElemtento() {
 
-	Item item = new Item(11);
-	Item item2 = new Item(10);
-	Item item3 = new Item(9);
-	Item item4 = new Item(12);
+	Item item = new Item(1);
+	Item item2 = new Item(2);
+	Item item3 = new Item(3);
+	Item item4 = new Item(4);
 
 	lista.add(item);
 	lista.add(item2);
@@ -58,18 +57,18 @@ class ListaEncadeadaTest {
 	Assert.assertEquals(4, lista.tamanho());
 
 	lista.remove(item2);
-
-	Assert.assertEquals(false, lista.contains(item2));
+	
 	Assert.assertEquals(3, lista.tamanho());
+	Assert.assertEquals(false, lista.contains(item2));
     }
 
     @Test
     public void testeRemoverItemPorPosicao() {
 
-	Item item = new Item(11);
-	Item item2 = new Item(10);
-	Item item3 = new Item(9);
-	Item item4 = new Item(12);
+	Item item = new Item(1);
+	Item item2 = new Item(2);
+	Item item3 = new Item(3);
+	Item item4 = new Item(4);
 
 	lista.add(item);
 	lista.add(item2);

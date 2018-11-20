@@ -94,6 +94,7 @@ public class DeckEncadeado {
 
 	if (pos == 0) {
 	    primeiroItem = primeiroItem.getProximo();
+	    contador--;
 	} else {
 
 	    Item temp = primeiroItem;

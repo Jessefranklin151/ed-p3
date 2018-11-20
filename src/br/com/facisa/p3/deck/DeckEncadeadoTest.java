@@ -208,10 +208,15 @@ class DeckEncadeadoTest {
 	deck.insertLast(item3);
 
 	Assert.assertEquals(3, deck.size());
+	deck.removeByIndex(0);
+	Assert.assertEquals(2, deck.size());
+
 	deck.removeByIndex(1);
 
-	Assert.assertEquals(false, deck.contains(item2));
-	Assert.assertEquals(2, deck.size());
+	Assert.assertEquals(false, deck.contains(item3));
+	Assert.assertEquals(false, deck.contains(item1));
+	Assert.assertEquals(true, deck.contains(item2));
+	Assert.assertEquals(1, deck.size());
     }
 
 }

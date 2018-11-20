@@ -9,14 +9,38 @@ public class FilaEncadeada {
 
     public void enqueue(Item item) {
 
+	if (primeiroItem == null) {
+	    this.primeiroItem = item;
+	    contador++;
+	} else {
+
+	    Item aux = primeiroItem;
+
+	    while (aux.getProximo() != null) {
+		aux = aux.getProximo();
+	    }
+	    aux.setProximo(item);
+	    contador++;
+
+	}
+
     }
 
     public Item dequeue() {
-	return null;
+
+	Item ret = primeiroItem;
+
+	if (primeiroItem != null) {
+	    primeiroItem = primeiroItem.getProximo();
+	    contador--;
+	}
+
+	return ret;
+
     }
 
     public Item front() {
-	return null;
+	return primeiroItem;
     }
 
     public int size() {

@@ -3,11 +3,14 @@ package br.com.facisa.p3.deck;
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import br.com.facisa.p3.Item;
+import br.com.facisa.p3.exceptions.EstruturaDeDadosVaziaException;
+import br.com.facisa.p3.exceptions.ItemInvalidoException;
 
 class DeckEncadeadoTest {
 
@@ -31,7 +34,7 @@ class DeckEncadeadoTest {
     }
 
     @Test
-    public void testeInsertItemFirst() {
+    public void testeInsertItemFirst() throws ItemInvalidoException {
 
 	Item item1 = new Item(1);
 	Item item2 = new Item(2);
@@ -47,7 +50,31 @@ class DeckEncadeadoTest {
     }
 
     @Test
-    public void testeInsertItemLast() {
+    public void testeInserirItemNulo() {
+
+	Assertions.assertThrows(ItemInvalidoException.class, () -> {
+	    deck.insertFirst(null);
+	});
+
+	Assertions.assertThrows(ItemInvalidoException.class, () -> {
+	    deck.insertLast(null);
+	});
+    }
+
+    @Test
+    public void removerItensComListaVazia() {
+
+	Assertions.assertThrows(EstruturaDeDadosVaziaException.class, () -> {
+	    deck.removeFirst();
+	});
+
+	Assertions.assertThrows(EstruturaDeDadosVaziaException.class, () -> {
+	    deck.removeLast();
+	});
+    }
+
+    @Test
+    public void testeInsertItemLast() throws ItemInvalidoException {
 	Item item1 = new Item(1);
 	Item item2 = new Item(2);
 	Item item3 = new Item(3);
@@ -59,7 +86,7 @@ class DeckEncadeadoTest {
     }
 
     @Test
-    public void testPeekFirt() {
+    public void testPeekFirt() throws ItemInvalidoException {
 
 	Item item1 = new Item(1);
 	Item item2 = new Item(2);
@@ -75,7 +102,7 @@ class DeckEncadeadoTest {
     }
 
     @Test
-    public void testePeekLast() {
+    public void testePeekLast() throws ItemInvalidoException {
 
 	Item item1 = new Item(1);
 	Item item2 = new Item(2);
@@ -91,7 +118,7 @@ class DeckEncadeadoTest {
     }
 
     @Test
-    public void testeSize() {
+    public void testeSize() throws ItemInvalidoException {
 
 	Item item1 = new Item(1);
 	Item item2 = new Item(2);
@@ -107,7 +134,7 @@ class DeckEncadeadoTest {
     }
 
     @Test
-    public void testeAdicionaFirtRemoveFirst() {
+    public void testeAdicionaFirtRemoveFirst() throws ItemInvalidoException, EstruturaDeDadosVaziaException {
 
 	Item item1 = new Item(1);
 	Item item2 = new Item(2);
@@ -125,7 +152,7 @@ class DeckEncadeadoTest {
     }
 
     @Test
-    public void testeAdicionaLastRemoveFirst() {
+    public void testeAdicionaLastRemoveFirst() throws ItemInvalidoException, EstruturaDeDadosVaziaException {
 
 	Item item1 = new Item(1);
 	Item item2 = new Item(2);
@@ -143,7 +170,7 @@ class DeckEncadeadoTest {
     }
 
     @Test
-    public void testeAdicionaFirtRemoveLast() {
+    public void testeAdicionaFirtRemoveLast() throws ItemInvalidoException, EstruturaDeDadosVaziaException {
 
 	Item item1 = new Item(1);
 
@@ -176,7 +203,7 @@ class DeckEncadeadoTest {
     }
 
     @Test
-    public void testeRemoverPorValor() {
+    public void testeRemoverPorValor() throws ItemInvalidoException {
 
 	Item item1 = new Item(1);
 	Item item2 = new Item(2);
@@ -194,7 +221,7 @@ class DeckEncadeadoTest {
     }
 
     @Test
-    public void testeContains() {
+    public void testeContains() throws ItemInvalidoException {
 
 	Item item1 = new Item(1);
 	Item item2 = new Item(2);
@@ -213,7 +240,7 @@ class DeckEncadeadoTest {
     }
 
     @Test
-    public void testeRemoverPeloIndex() {
+    public void testeRemoverPeloIndex() throws ItemInvalidoException {
 
 	Item item1 = new Item(1);
 

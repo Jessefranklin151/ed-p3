@@ -1,13 +1,19 @@
 package br.com.facisa.p3.deck;
 
 import br.com.facisa.p3.Item;
+import br.com.facisa.p3.exceptions.EstruturaDeDadosVaziaException;
+import br.com.facisa.p3.exceptions.ItemInvalidoException;
 
 public class DeckEncadeado {
 
     private Item primeiroItem;
     private int contador;
 
-    public void insertFirst(Item item) {
+    public void insertFirst(Item item) throws ItemInvalidoException {
+
+	if (item == null) {
+	    throw new ItemInvalidoException();
+	}
 
 	if (primeiroItem == null) {
 	    this.primeiroItem = item;
@@ -20,7 +26,11 @@ public class DeckEncadeado {
 
     }
 
-    public void insertLast(Item item) {
+    public void insertLast(Item item) throws ItemInvalidoException {
+
+	if (item == null) {
+	    throw new ItemInvalidoException();
+	}
 
 	if (primeiroItem == null) {
 	    this.primeiroItem = item;
@@ -39,7 +49,11 @@ public class DeckEncadeado {
 
     }
 
-    public Item removeFirst() {
+    public Item removeFirst() throws EstruturaDeDadosVaziaException {
+
+	if (primeiroItem == null || contador == 0) {
+	    throw new EstruturaDeDadosVaziaException("Deck");
+	}
 
 	Item ret = primeiroItem;
 
@@ -52,9 +66,20 @@ public class DeckEncadeado {
 
     }
 
-    public Item removeLast() {
+    public Item removeLast() throws EstruturaDeDadosVaziaException {
+
+	if (primeiroItem == null || contador == 0) {
+	    throw new EstruturaDeDadosVaziaException("Deck");
+	}
 
 	Item ret = null;
+
+	if (primeiroItem.getProximo() == null) {
+	    ret = primeiroItem;
+	    primeiroItem = null;
+	    contador--;
+	    return ret;
+	}
 
 	Item temp = primeiroItem;
 	Item anterior = primeiroItem;
@@ -66,6 +91,7 @@ public class DeckEncadeado {
 
 	ret = temp;
 	anterior.setProximo(null);
+	contador--;
 
 	return ret;
 

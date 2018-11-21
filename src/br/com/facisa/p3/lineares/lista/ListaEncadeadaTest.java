@@ -1,4 +1,4 @@
-package br.com.facisa.p3.lista;
+package br.com.facisa.p3.lineares.lista;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterAll;
@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import br.com.facisa.p3.Item;
+import br.com.facisa.p3.lineares.Item;
 
 class ListaEncadeadaTest {
 

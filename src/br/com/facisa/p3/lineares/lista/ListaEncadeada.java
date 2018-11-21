@@ -1,7 +1,6 @@
+package br.com.facisa.p3.lineares.lista;
 
-package br.com.facisa.p3.lista;
-
-import br.com.facisa.p3.Item;
+import br.com.facisa.p3.lineares.Item;
 
 public class ListaEncadeada {
 

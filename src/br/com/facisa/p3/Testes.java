@@ -2,6 +2,8 @@ package br.com.facisa.p3;
 
 import java.util.LinkedList;
 
+import br.com.facisa.p3.lineares.Item;
+
 //import br.com.facisa.p3.lista.ListaEncadeada;
 
 public class Testes {

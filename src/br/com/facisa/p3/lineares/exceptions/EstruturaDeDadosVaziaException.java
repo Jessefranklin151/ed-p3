@@ -1,4 +1,4 @@
-package br.com.facisa.p3.exceptions;
+package br.com.facisa.p3.lineares.exceptions;
 
 public class EstruturaDeDadosVaziaException extends Exception {
 

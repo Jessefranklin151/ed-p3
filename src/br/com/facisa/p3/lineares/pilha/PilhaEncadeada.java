@@ -1,8 +1,8 @@
-package br.com.facisa.p3.pilha;
+package br.com.facisa.p3.lineares.pilha;
 
-import br.com.facisa.p3.Item;
-import br.com.facisa.p3.exceptions.EstruturaDeDadosVaziaException;
-import br.com.facisa.p3.exceptions.ItemInvalidoException;
+import br.com.facisa.p3.lineares.Item;
+import br.com.facisa.p3.lineares.exceptions.EstruturaDeDadosVaziaException;
+import br.com.facisa.p3.lineares.exceptions.ItemInvalidoException;
 
 public class PilhaEncadeada {
 

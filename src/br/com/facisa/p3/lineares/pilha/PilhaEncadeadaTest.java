@@ -1,4 +1,4 @@
-package br.com.facisa.p3.pilha;
+package br.com.facisa.p3.lineares.pilha;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterAll;
@@ -8,9 +8,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import br.com.facisa.p3.Item;
-import br.com.facisa.p3.exceptions.EstruturaDeDadosVaziaException;
-import br.com.facisa.p3.exceptions.ItemInvalidoException;
+import br.com.facisa.p3.lineares.Item;
+import br.com.facisa.p3.lineares.exceptions.EstruturaDeDadosVaziaException;
+import br.com.facisa.p3.lineares.exceptions.ItemInvalidoException;
 
 class PilhaEncadeadaTest {
 

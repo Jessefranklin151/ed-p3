@@ -1,4 +1,4 @@
-package br.com.facisa.p3;
+package br.com.facisa.p3.lineares;
 
 public class Item {
 

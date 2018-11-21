@@ -19,5 +19,6 @@ public class Testes {
     	arvore.adicionar(50);
     	arvore.adicionar(6);
     	
+    	arvore.getRaiz(arvore.findNodeByValue(5));
     }
 }

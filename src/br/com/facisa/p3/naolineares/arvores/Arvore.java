@@ -101,6 +101,9 @@ public class Arvore {
 			return findNodeByValue(node.getDireita(), numero);
 		}
 		
+		return node;
+		
+		
 	}
 	
 	

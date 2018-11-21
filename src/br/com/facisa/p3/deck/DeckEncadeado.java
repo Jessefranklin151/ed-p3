@@ -57,15 +57,15 @@ public class DeckEncadeado {
 	Item ret = null;
 
 	Item temp = primeiroItem;
-	Item aux = null;
+	Item anterior = primeiroItem;
 
 	while (temp != null && temp.getProximo() != null) {
-	    aux = temp;
+	    anterior = temp;
 	    temp = temp.getProximo();
 	}
 
 	ret = temp;
-	aux.setProximo(null);
+	anterior.setProximo(null);
 
 	return ret;
 

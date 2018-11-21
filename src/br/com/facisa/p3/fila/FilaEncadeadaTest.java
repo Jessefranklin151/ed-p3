@@ -83,7 +83,6 @@ class FilaEncadeadaTest {
     public void testeIsEmpty() {
 
 	Item item = new Item(1);
-	Item item2 = new Item(2);
 
 	Assert.assertEquals(true, fila.isEmpty());
 	fila.enqueue(item);

@@ -54,16 +54,18 @@ public class DeckEncadeado {
 
     public Item removeLast() {
 
-	Item temp = primeiroItem;
+	Item ret = null;
 
-	while (temp != null && temp.getProximo().getProximo() != null) {
+	Item temp = primeiroItem;
+	Item aux = null;
+
+	while (temp != null && temp.getProximo() != null) {
+	    aux = temp;
 	    temp = temp.getProximo();
 	}
 
-	Item ret = temp.getProximo();
-
-	temp.setProximo(null);
-	contador--;
+	ret = temp;
+	aux.setProximo(null);
 
 	return ret;
 

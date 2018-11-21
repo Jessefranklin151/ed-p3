@@ -5,101 +5,101 @@ import br.com.facisa.p3.Item;
 
 public class ListaEncadeada {
 
-	private Item primeiroItem;
-	private int contador;
+    private Item primeiroItem;
+    private int contador;
 
-	public void add(Item item) {
+    public void add(Item item) {
 
-		if (primeiroItem == null) {
-			this.primeiroItem = item;
-			contador++;
-		} else {
+	if (primeiroItem == null) {
+	    this.primeiroItem = item;
+	    contador++;
+	} else {
 
-			Item aux = primeiroItem;
+	    Item aux = primeiroItem;
 
-			while (aux.getProximo() != null) {
-				aux = aux.getProximo();
-			}
-			aux.setProximo(item);
-			contador++;
-		}
-
+	    while (aux.getProximo() != null) {
+		aux = aux.getProximo();
+	    }
+	    aux.setProximo(item);
+	    contador++;
 	}
 
-	public void remove(Item item) {
+    }
 
-		if (item != null) {
-			if (item.equals(primeiroItem)) {
-				primeiroItem = primeiroItem.getProximo();
-				contador--;
-			} else {
-				Item temp = primeiroItem;
+    public void remove(Item item) {
 
-				while (temp != null && temp.getProximo() != null && !temp.getProximo().equals(item)) {
-					temp = temp.getProximo();
-				}
-				if (temp.getProximo().equals(item)) {
-					temp.setProximo(temp.getProximo().getProximo());
-					contador--;
-				}
-			}
-		}
-
-	}
-
-	public int tamanho() {
-		return contador;
-	}
-
-	public void remove(int pos) {
-
-		if (pos == 0) {
-			primeiroItem = primeiroItem.getProximo();
-		} else {
-
-			Item temp = primeiroItem;
-
-			for (int i = 0; i < pos - 1; i++) {
-				temp = temp.getProximo();
-			}
-
-			temp.setProximo(temp.getProximo().getProximo());
-			contador--;
-		}
-
-	}
-
-	public Item get(int pos) {
-
+	if (item != null) {
+	    if (item.equals(primeiroItem)) {
+		primeiroItem = primeiroItem.getProximo();
+		contador--;
+	    } else {
 		Item temp = primeiroItem;
 
-		for (int i = 0; i < pos; i++) {
-			temp = temp.getProximo();
+		while (temp != null && temp.getProximo() != null && !temp.getProximo().equals(item)) {
+		    temp = temp.getProximo();
 		}
-
-		return temp;
+		if (temp.getProximo().equals(item)) {
+		    temp.setProximo(temp.getProximo().getProximo());
+		    contador--;
+		}
+	    }
 	}
 
-	public void clear() {
-		this.primeiroItem = null;
-		this.contador = 0;
+    }
+
+    public int tamanho() {
+	return contador;
+    }
+
+    public void remove(int pos) {
+
+	if (pos == 0) {
+	    primeiroItem = primeiroItem.getProximo();
+	} else {
+
+	    Item temp = primeiroItem;
+
+	    for (int i = 0; i < pos - 1; i++) {
+		temp = temp.getProximo();
+	    }
+
+	    temp.setProximo(temp.getProximo().getProximo());
+	    contador--;
 	}
 
-	public boolean contains(Item item) {
+    }
 
-		boolean achou = false;
-		Item temp = primeiroItem;
+    public Item get(int pos) {
 
-		while (temp != null && !temp.equals(item)) {
-			temp = temp.getProximo();
-		}
-		
-		if (temp != null && temp.equals(item)) {
-			achou = true;
-		}
+	Item temp = primeiroItem;
 
-		return achou;
-
+	for (int i = 0; i < pos; i++) {
+	    temp = temp.getProximo();
 	}
+
+	return temp;
+    }
+
+    public void clear() {
+	this.primeiroItem = null;
+	this.contador = 0;
+    }
+
+    public boolean contains(Item item) {
+
+	boolean achou = false;
+	Item temp = primeiroItem;
+
+	while (temp != null && !temp.equals(item)) {
+	    temp = temp.getProximo();
+	}
+
+	if (temp != null && temp.equals(item)) {
+	    achou = true;
+	}
+
+	return achou;
+
+    }
 
 }

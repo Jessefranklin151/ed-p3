@@ -146,18 +146,33 @@ class DeckEncadeadoTest {
     public void testeAdicionaFirtRemoveLast() {
 
 	Item item1 = new Item(1);
+
+	deck.insertFirst(item1);
+
+	deck.removeLast();
+
+	Assert.assertEquals(false, deck.contains(item1));
+	Assert.assertEquals(0, deck.size());
+
 	Item item2 = new Item(2);
 	Item item3 = new Item(3);
+
+	deck.insertFirst(item2);
+	deck.insertFirst(item3);
+
+	deck.removeLast();
+	Assert.assertEquals(false, deck.contains(item1));
+	Assert.assertEquals(1, deck.size());
+	deck.removeLast();
+	Assert.assertEquals(false, deck.contains(item3));
+	Assert.assertEquals(0, deck.size());
 
 	deck.insertFirst(item1);
 	deck.insertFirst(item2);
 	deck.insertFirst(item3);
 
 	deck.removeLast();
-	Assert.assertEquals(item2, deck.peekLast());
-	deck.removeLast();
-	Assert.assertEquals(item3, deck.peekLast());
-
+	Assert.assertEquals(false, deck.contains(item1));
     }
 
     @Test
@@ -201,23 +216,12 @@ class DeckEncadeadoTest {
     public void testeRemoverPeloIndex() {
 
 	Item item1 = new Item(1);
-	Item item2 = new Item(2);
-	Item item3 = new Item(3);
 
 	deck.insertLast(item1);
-	deck.insertLast(item2);
-	deck.insertLast(item3);
 
-	Assert.assertEquals(3, deck.size());
 	deck.removeByIndex(0);
-	Assert.assertEquals(2, deck.size());
 
-	deck.removeByIndex(1);
-
-	Assert.assertEquals(false, deck.contains(item3));
 	Assert.assertEquals(false, deck.contains(item1));
-	Assert.assertEquals(true, deck.contains(item2));
-	Assert.assertEquals(1, deck.size());
     }
 
 }

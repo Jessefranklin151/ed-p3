@@ -13,9 +13,14 @@ public class Node {
 		this.direita = direita;
 		this.pai = pai;
 	}
-
+	
 	public Node(Integer valor) {
 		this.valor = valor;
+	}
+
+	public Node(Integer valor, Node pai) {
+		this.valor = valor;
+		this.pai = pai;
 	}
 
 	public Integer getValor() {

@@ -6,6 +6,24 @@ public class Node {
 	private Node esquerda;
 	private Node direita;
 	private Node pai;
+	private Character letra;
+	
+	public Node(Character letra) {
+		this.letra = letra;
+	}
+
+	public Character getLetra() {
+		return letra;
+	}
+
+	public void setLetra(Character letra) {
+		this.letra = letra;
+	}
+
+	@Override
+	public String toString() {
+		return "Node [valor=" + valor + "]";
+	}
 
 	public Node(Integer valor, Node esquerda, Node direita, Node pai) {
 		this.valor = valor;
